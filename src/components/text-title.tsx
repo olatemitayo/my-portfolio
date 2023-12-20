@@ -1,13 +1,27 @@
-import { Flex, Text, Title } from "@mantine/core";
+import { Flex, Text, Title, clsx } from "@mantine/core";
 import React, { ReactNode } from "react";
 
-export function TextTitle({ text, title }: { text: string; title: string }) {
+export function TextTitle({
+  text,
+  title,
+  className,
+}: {
+  text: string;
+  title: string;
+  className?: string;
+}) {
   return (
     <Flex direction="column" align="center">
-      <Text c="#B3B3B3" className="text-[clamp(48px,4vw,64px)] ">
+      <Text c="#B3B3B3" className=" leading-none text-[clamp(32px,4vw,64px)] ">
         {text}
       </Text>
-      <Text className="whitespace-nowrap" c="#121212">
+      <Text
+        className={clsx(
+          "whitespace-nowrap text-[clamp(12.5px,1vw,16px)]",
+          className
+        )}
+        c="#121212"
+      >
         {title}
       </Text>
     </Flex>

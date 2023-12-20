@@ -32,7 +32,7 @@ export default function Home() {
         <Flex
           w="100%"
           justify="space-between"
-          align="center"
+          // align="center"
           className="clg:flex clg:flex-col clg:gap-4  "
         >
           <Flex
@@ -40,7 +40,7 @@ export default function Home() {
             direction="column"
             className="w-[48%] clg:w-full"
           >
-            <Flex gap="clamp(12px,4vw,53px)">
+            <Flex gap="clamp(10px,4vw,53px)">
               <TextTitle text="01" title="ABOUT ME" />
               <Flex direction="column" gap={16}>
                 <Flex
@@ -87,9 +87,12 @@ export default function Home() {
               </Flex>
             </Flex>
           </Flex>
-          <Box className="w-[48%] clg:w-full">
-            <img src="/dpp.svg" alt="heropicture" />
-          </Box>
+
+          <img
+            className="w-[48%] clg:w-full"
+            src="/dpp.svg"
+            alt="heropicture"
+          />
         </Flex>
       </Flex>
     </Layout>
