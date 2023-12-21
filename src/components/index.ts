@@ -1,3 +1,3 @@
 export * from "./layout";
 export * from "./text-title";
-export * from "./timeline";
+export * from "./educational-timeline";

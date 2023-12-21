@@ -6,29 +6,22 @@ const EducationalHiatory = [
   {
     id: 1,
     period: "FEBRUARY 2016 - FEBRUARY 2020",
-    name: "Federal University of Agriculture, Abeokuta2",
+    name: "Federal University of Agriculture, Abeokuta",
     description:
-      "Decision-making and strategic thinking are daily responsibilities for me, and the ability to think critically about and weigh options, making smart product decisions. ",
+      "Relevant coursework includes Financial Accounting, Managerial Accounting, Corporate Finance, and Investment Analysis.",
   },
   {
     id: 2,
-    period: "FEBRUARY 2016 - FEBRUARY 2020",
-    name: "Federal University of Agriculture, Abeokuta2",
+    period: "FEBRUARY 2020 - FEBRUARY 2021",
+    name: "Torilo Academy",
     description:
-      "Decision-making and strategic thinking are daily responsibilities for me, and the ability to think critically about and weigh options, making smart product decisions. ",
-  },
-  {
-    id: 3,
-    period: "FEBRUARY 2016 - FEBRUARY 2020",
-    name: "Federal University of Agriculture, Abeokuta2",
-    description:
-      "Decision-making and strategic thinking are daily responsibilities for me, and the ability to think critically about and weigh options, making smart product decisions. ",
+      "I completed comprehensive courses covering HTML, CSS, JavaScript, and React, equipping me with a strong foundation in web development and frontend technologies.",
   },
 ];
 
-export function TimeLine() {
+export function EducationTimeLine() {
   return (
-    <Flex gap="clamp(10px,4vw,53px)" align="start">
+    <Flex gap="clamp(10px,4vw,53px)" align="start" className="clg:flex-col">
       <TextTitle className=" " text="02" title="EDUCATIONAL BACKGROUND" />
       <Flex w="100%" direction="column" gap={40}>
         {EducationalHiatory?.map((item) => (

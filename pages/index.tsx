@@ -1,4 +1,5 @@
-import { Layout, TextTitle, TimeLine } from "@/index";
+import { Layout, TextTitle, EducationTimeLine } from "@/index";
+import { JobTimeLine } from "@/job-timeline";
 import { Box, Button, Flex, Text } from "@mantine/core";
 import React from "react";
 
@@ -27,7 +28,7 @@ const herodetails = [
 export default function Home() {
   return (
     <Layout>
-      <Flex direction="column" gap="clamp(20px,6vw,96px)">
+      <Flex direction="column" gap="clamp(40px,6vw,96px)">
         {/* hero section  */}
         <Flex
           w="100%"
@@ -40,7 +41,11 @@ export default function Home() {
             direction="column"
             className="w-[48%] clg:w-full"
           >
-            <Flex gap="clamp(10px,4vw,53px)">
+            <Flex
+              align="start"
+              gap="clamp(10px,4vw,53px)"
+              className="clg:flex-col clg:text-start"
+            >
               <TextTitle text="01" title="ABOUT ME" />
               <Flex direction="column" gap={16}>
                 <Flex
@@ -95,7 +100,9 @@ export default function Home() {
           />
         </Flex>
         {/* education  */}
-        <TimeLine />
+        <EducationTimeLine />
+        {/* job  */}
+        <JobTimeLine />
       </Flex>
     </Layout>
   );
