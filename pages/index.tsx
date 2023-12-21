@@ -1,4 +1,4 @@
-import { Layout, TextTitle } from "@/index";
+import { Layout, TextTitle, TimeLine } from "@/index";
 import { Box, Button, Flex, Text } from "@mantine/core";
 import React from "react";
 
@@ -94,6 +94,8 @@ export default function Home() {
             alt="heropicture"
           />
         </Flex>
+        {/* education  */}
+        <TimeLine />
       </Flex>
     </Layout>
   );

@@ -17,7 +17,7 @@ export function TextTitle({
       </Text>
       <Text
         className={clsx(
-          "whitespace-nowrap text-[clamp(12.5px,1vw,16px)]",
+          "w-max max-w-[71px] text-[clamp(12.5px,1vw,16px)]",
           className
         )}
         c="#121212"

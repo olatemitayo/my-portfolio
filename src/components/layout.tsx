@@ -73,11 +73,7 @@ export function Layout({ children }: { children: ReactNode }) {
                   }
                   position="right"
                   overlayProps={{ opacity: 0.5, blur: 4 }}
-                  transitionProps={{
-                    transition: "rotate-left",
-                    duration: 150,
-                    timingFunction: "linear",
-                  }}
+                  transitionProps={{ duration: 600, transition: "slide-left" }}
                 >
                   <Flex direction="column" gap={16}>
                     {NavLinks?.map((item) => (
