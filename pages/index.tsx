@@ -16,11 +16,11 @@ export default function index() {
     {
       id: 1,
       title: "About me",
-      link: "/",
+      link: "/about",
     },
     {
       id: 2,
-      title: "My portfolio",
+      title: "Project",
       link: "/portfolio",
     },
     {

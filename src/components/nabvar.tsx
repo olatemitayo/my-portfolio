@@ -10,7 +10,7 @@ interface INavLinks {
     title: string;
     link: string;
   }
-export default function NavBar() {
+export  function NavBar() {
    
       const NavLinks: INavLinks[] = [
         {

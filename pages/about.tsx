@@ -1,5 +1,6 @@
 import { Layout, TextTitle, EducationTimeLine } from "@/index";
 import { JobTimeLine } from "@/job-timeline";
+import { NavBar } from "@/nabvar";
 import { Box, Button, Flex, Text } from "@mantine/core";
 import React from "react";
 
@@ -29,6 +30,8 @@ export default function Home() {
   return (
     <Layout>
       <Flex direction="column" gap="clamp(40px,6vw,96px)">
+        {/* navbar  */}
+        <NavBar />
         {/* hero section  */}
         <Flex
           w="100%"
