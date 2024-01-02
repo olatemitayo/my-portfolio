@@ -33,14 +33,14 @@ export function EducationTimeLine() {
             align="start"
             className="clg:flex-col"
           >
-            <Text className="font-extrabold">{item?.period}</Text>
+            <Text w='45%'  className="font-extrabold">{item?.period}</Text>
             <img
               className="clg:hidden"
               src="/dividerIcon.svg"
               width={17}
               alt=""
             />
-            <Flex direction="column" gap={10}>
+            <Flex  w='48%' direction="column" gap={10}>
               <Text className="font-extrabold">{item.name}</Text>
               <Text maw={370} className="clg:max-w-max">
                 {item?.description}

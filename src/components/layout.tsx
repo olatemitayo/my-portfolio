@@ -5,33 +5,34 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { ReactNode } from "react";
 
-interface INavLinks {
-  id: number;
-  title: string;
-  link: string;
-}
-const NavLinks: INavLinks[] = [
+
+const herodetails = [
   {
     id: 1,
-    title: "About me",
-    link: "/",
+    figure: "200+",
+    text: "completed projects",
   },
   {
-    id: 2,
-    title: "My portfolio",
-    link: "/portfolio",
+    id: 1,
+    figure: "60+",
+    text: "Happy customers",
   },
   {
-    id: 3,
-    title: "Contact me",
-    link: "/contact",
+    id: 1,
+    figure: "5+",
+    text: "Years of experience",
+  },
+  {
+    id: 1,
+    figure: "3+",
+    text: "Industry experience",
   },
 ];
 export function Layout({ children }: { children: ReactNode }) {
-  const router = useRouter();
-  const [opened, { open, close }] = useDisclosure(false);
+
   return (
-    <div className="fixed h-full w-full  z-50   bg-cover bg-[center_top_0.2rem] bg-no-repeat">
+    <div className="fixed bg-[#FFFAF5] h-screen w-screen bg-[url('/Frame.svg')] z-50 bg-cover bg-center bg-no-repeat">
+    
       <div className="relative h-full overflow-y-scroll no-scrollbar">
         <Flex
           direction="column"
@@ -39,78 +40,18 @@ export function Layout({ children }: { children: ReactNode }) {
           py="clamp(12px,3vw,40px)"
           gap="clamp(30px,6px,90px)"
         >
-          {/* navbar  */}
-          <Flex justify="space-between" align="center" w="100%">
-            <Flex c="#55278F" className="font-bold text-[24px]">
-              O.TAYO
-            </Flex>
-            <Flex gap="clamp(16px,4vw,50px)">
-              {NavLinks?.map((item) => (
-                <Link className="cmd:hidden" href={item?.link} key={item?.id}>
-                  <Text
-                    c="#121212"
-                    className={clsx(
-                      router.pathname === item?.link
-                        ? "text-[#55278F] border-b border-[#55278F]"
-                        : ""
-                    )}
-                  >
-                    {item?.title}
-                  </Text>
-                </Link>
-              ))}
-              <div className="hidden cmd:block">
-                <Drawer
-                  opened={opened}
-                  classNames={{
-                    close: "w-[32px] h-[32px] border border-[#55278F] ",
-                  }}
-                  onClose={close}
-                  title={
-                    <Flex c="#55278F" className="font-bold text-[24px] ">
-                      O.TAYO
-                    </Flex>
-                  }
-                  position="right"
-                  overlayProps={{ opacity: 0.5, blur: 4 }}
-                  transitionProps={{ duration: 600, transition: "slide-left" }}
-                >
-                  <Flex direction="column" gap={16}>
-                    {NavLinks?.map((item) => (
-                      <Link href={item?.link} key={item?.id}>
-                        <Text
-                          c="#121212"
-                          className={clsx(
-                            router.pathname === item?.link
-                              ? "text-[#55278F] max-w-max border-b border-[#55278F]"
-                              : ""
-                          )}
-                        >
-                          {item?.title}
-                        </Text>
-                      </Link>
-                    ))}
-                  </Flex>
-                </Drawer>
-
-                <Group position="center">
-                  <Image
-                    onClick={open}
-                    className="hover:cursor-pointer"
-                    src="/hamburger.svg"
-                    alt="hamburger"
-                    width={28}
-                    height={28}
-                  />
-                </Group>
-              </div>
-            </Flex>
-          </Flex>
+         
+         
           {/* children  */}
-          <div className="max-w-[1440px] m-auto">{children}</div>
+        {children}
+        <Flex direction='column'>
+          <Link href={""}></Link>
+        </Flex>
         </Flex>
       </div>
     </div>
+
+  
   );
 }
 
