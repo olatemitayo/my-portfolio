@@ -20,8 +20,9 @@ const config: Config = {
     },
     screens: {
       "2xl": { max: "1440px" },
-      xl: { max: "1279px" },
-      lg: { max: "900px" },
+      xl: { max: "1068px" },
+
+      lg: { max: "960px" },
       clg: { max: "850px" },
       smd: {max: '720px'},
       md: { max: "700px" },
@@ -31,7 +32,7 @@ const config: Config = {
       gsm: { max: "500px" },
       csm: { max: "425px" },
       ssm: {max: '370px'},
-      sssm: {max: '330px'},
+      sssm: {max: '342px'},
       sm: { max: "320px" },
     },
   },

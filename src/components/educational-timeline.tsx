@@ -1,6 +1,7 @@
-import { Flex, Text } from "@mantine/core";
+import { Box, Flex, Text } from "@mantine/core";
 import React from "react";
 import { TextTitle } from ".";
+import { DividerIcon } from "..";
 
 const EducationalHiatory = [
   {
@@ -21,7 +22,7 @@ const EducationalHiatory = [
 
 export function EducationTimeLine() {
   return (
-    <Flex gap="clamp(10px,4vw,53px)" align="start" className="clg:flex-col">
+    <Flex gap="clamp(10px,4vw,53px)" align="start" className="lg:flex-col">
       <TextTitle className=" " text="02" title="EDUCATIONAL BACKGROUND" />
       <Flex w="100%" direction="column" gap={40}>
         {EducationalHiatory?.map((item) => (
@@ -31,18 +32,15 @@ export function EducationTimeLine() {
             justify="space-between"
             w="100%"
             align="start"
-            className="clg:flex-col"
+            className="lg:flex-col"
           >
-            <Text w='45%'  className="font-extrabold">{item?.period}</Text>
-            <img
-              className="clg:hidden"
-              src="/dividerIcon.svg"
-              width={17}
-              alt=""
-            />
-            <Flex  w='48%' direction="column" gap={10}>
+            <Text maw={300}  className="font-extrabold">{item?.period}</Text>
+            <Box className="lg:hidden">
+              <DividerIcon />
+            </Box>
+            <Flex  w={500} className="xl:!w-[400px] lg:!w-full" direction="column" gap={10}>
               <Text className="font-extrabold">{item.name}</Text>
-              <Text maw={370} className="clg:max-w-max">
+              <Text  className="lg:max-w-max">
                 {item?.description}
               </Text>
             </Flex>

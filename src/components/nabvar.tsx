@@ -34,7 +34,10 @@ export  function NavBar() {
   return (
     <Flex justify="space-between" align="center" w="100%">
     <Flex c="#55278F" className="font-bold text-[24px]">
+      <Link href='/'>
       O.TAYO
+
+      </Link>
     </Flex>
     <Flex gap="clamp(16px,4vw,50px)">
       {NavLinks?.map((item) => (
@@ -59,9 +62,12 @@ export  function NavBar() {
           }}
           onClose={close}
           title={
+              <Link href='/'>
             <Flex c="#55278F" className="font-bold text-[24px] ">
+              
               O.TAYO
             </Flex>
+              </Link>
           }
           position="right"
           overlayProps={{ opacity: 0.5, blur: 4 }}

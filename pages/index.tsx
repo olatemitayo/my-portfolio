@@ -20,7 +20,7 @@ export default function index() {
     },
     {
       id: 2,
-      title: "Project",
+      title: "Projects",
       link: "/portfolio",
     },
     {
@@ -45,13 +45,13 @@ export default function index() {
           transition={{ duration: 1 }}
           className="text-[#55278F] font-semibold text-5xl scmd:text-4xl"
         >
-          Hello
+          Hello,
         </motion.div>
         <Flex direction='column' gap={20}>
           <AnimatedText
             el="h2"
             text={["My name is Olatunji Temitayo", "I'm a Software Developer"]}
-            className="text-4xl scmd:text-2xl ssm:text-xl sssm:text-lg"
+            className="text-4xl scmd:text-2xl csm:text-xl sssm:text-lg"
             repeatDelay={10000}
           />
 

@@ -2,6 +2,7 @@ import { Layout, TextTitle, EducationTimeLine } from "@/index";
 import { JobTimeLine } from "@/job-timeline";
 import { NavBar } from "@/nabvar";
 import { Box, Button, Flex, Text } from "@mantine/core";
+import { motion } from "framer-motion";
 import React from "react";
 
 const herodetails = [
@@ -37,17 +38,19 @@ export default function Home() {
           w="100%"
           justify="space-between"
           // align="center"
-          className="clg:flex clg:flex-col clg:gap-4  "
+          className="lg:flex lg:flex-col lg:gap-4  "
         >
-          <Flex
-            gap="clamp(16px,2vw,32px)"
-            direction="column"
-            className="w-[48%] clg:w-full"
+          <motion.div 
+            initial={{ x: -1000 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 1 }}
+           
+            className="w-[48%] flex-col lg:w-full gap-[clamp(16px,2vw,32px)]"
           >
             <Flex
               align="start"
               gap="clamp(10px,4vw,53px)"
-              className="clg:flex-col clg:text-start"
+              className="lg:flex-col lg:text-start gap-[clamp(10px,4vw,53px)]"
             >
               <TextTitle text="01" title="ABOUT ME" />
               <Flex direction="column" gap={16}>
@@ -92,18 +95,21 @@ export default function Home() {
                 </Flex> */}
               </Flex>
             </Flex>
-          </Flex>
+          </motion.div>
 
-          <img
-            className="w-[48%] clg:w-full"
+          <motion.img
+           initial={{ x: 4000 }}
+           animate={{ x: 0 }}
+           transition={{ duration: 1 }}
+            className="w-[48%] lg:w-full"
             src="/dpp.svg"
             alt="heropicture"
           />
         </Flex>
         {/* education  */}
-        {/* <EducationTimeLine /> */}
+        <EducationTimeLine />
         {/* job  */}
-        {/* <JobTimeLine /> */}
+        <JobTimeLine />
       </Flex>
     </Layout>
   );
