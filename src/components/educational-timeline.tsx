@@ -26,6 +26,7 @@ const EducationalHiatory = [
 export function EducationTimeLine() {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+
   // Set up the animation logic
   useEffect(() => {
     if (inView) {
@@ -44,7 +45,7 @@ export function EducationTimeLine() {
   return (
     <motion.div ref={ref}
     initial={{ x: 0, opacity: 0 }}
-    animate={controls} className="flex text-start gap-[clamp(10px,4vw,53px)] lg:flex-col">
+    animate={controls} className="flex items-start gap-[clamp(10px,4vw,53px)] lg:flex-col">
       <TextTitle className=" " text="02" title="EDUCATIONAL BACKGROUND" />
       <Flex w="100%" direction="column" gap={40}>
         {EducationalHiatory?.map((item) => (
@@ -54,7 +55,7 @@ export function EducationTimeLine() {
             justify="space-between"
             w="100%"
             align="start"
-            className="lg:flex-col"
+            className="lg:flex-col text-sm"
           >
             <Text w={300}  className="font-extrabold">{item?.period}</Text>
             <Box className="lg:hidden">

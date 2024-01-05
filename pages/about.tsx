@@ -63,7 +63,7 @@ export default function Home() {
                   <Text className="font-bold">A FRONTEND WEB DEVELOPER</Text>
                 </Flex>
 
-                <Text c='#121212'>
+                <Text c='#121212' className="text-sm">
                 As a 25-year-old frontend web developer, I am dedicated to bringing creative visions to life through my expertise in HTML, CSS, and JavaScript. With a strong eye for design, I specialize in crafting user-friendly websites that seamlessly blend aesthetics with functionality. My commitment to staying at the forefront of web development trends ensures that I deliver modern and engaging digital experiences. I thrive in collaborative environments, leveraging my skills to contribute innovative solutions to diverse projects. Eager to tackle new challenges, I bring a dynamic and proactive approach to every aspect of frontend development.
                 </Text>
                 {/* <Flex direction="column" gap="clamp(12px,2vw,32px)">
@@ -93,7 +93,7 @@ export default function Home() {
                   >
                     Let&apos; chat
                   </Button>
-                </Flex> */}
+                </Flex>  */}
               </Flex>
             </Flex>
           </motion.div>
@@ -101,7 +101,7 @@ export default function Home() {
           <motion.img
            initial={{ x: 4000 }}
            animate={{ x: 0 }}
-           transition={{ duration: 1 }}
+           transition={{ duration: 1, ease: "easeInOut" }}
             className="w-[48%] lg:w-full"
             src="/dpp.svg"
             alt="heropicture"

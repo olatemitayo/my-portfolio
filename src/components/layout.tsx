@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
-    <div  className="background-container">
+    <div  className="background-container  overflow-auto">
       <div className="relative h-full overflow-y-scroll no-scrollbar">
         <Flex
           direction="column"

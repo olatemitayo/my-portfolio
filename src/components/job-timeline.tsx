@@ -65,7 +65,7 @@ export function JobTimeLine() {
   return (
     <motion.div  ref={ref}
     initial={{ x: 0, opacity: 0 }}
-    animate={controls} className="flex text-start gap-[clamp(10px,4vw,53px)] lg:flex-col">
+    animate={controls} className="flex items-start gap-[clamp(10px,4vw,53px)] lg:flex-col">
       <TextTitle className="text-center " text="03" title="CAREER MILESTONES" />
       <Flex w="100%" direction="column" gap={40}>
         {EducationalHiatory?.map((item) => (
@@ -75,7 +75,7 @@ export function JobTimeLine() {
             justify="space-between"
             w="100%"
             align="start"
-            className="lg:flex-col"
+            className="lg:flex-col text-sm"
           >
             <motion.div
              
