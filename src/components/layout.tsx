@@ -1,10 +1,9 @@
 import { Flex } from "@mantine/core";
 import React, { ReactNode } from "react";
 
-
 export function Layout({ children }: { children: ReactNode }) {
   return (
-    <div className="fixed bg-[#FFFAF5] h-screen w-screen bg-[url('/Frame.svg')] z-50 bg-cover bg-center bg-no-repeat">
+    <div  className="background-container">
       <div className="relative h-full overflow-y-scroll no-scrollbar">
         <Flex
           direction="column"
@@ -19,3 +18,4 @@ export function Layout({ children }: { children: ReactNode }) {
     </div>
   );
 }
+

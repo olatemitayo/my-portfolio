@@ -1,28 +1,71 @@
 import { Box, Flex, Text } from "@mantine/core";
-import React from "react";
+import React, { useEffect } from "react";
 import { TextTitle } from ".";
 import { DividerIcon } from "@/icons";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const EducationalHiatory = [
   {
     id: 1,
-    period: "AUGUST 2021 - JULY 2022 (NYSC)",
-    name: "Ministry of Information and Communication, Ogun State",
-    description:
-      "Relevant coursework includes Financial Accounting, Managerial Accounting, Corporate Finance, and Investment Analysis.",
+    period: "JANUARY 2023 - CURRENT",
+    name: "Afex Commodity Exchange - Software Engineer",
+    tasks: {
+      one: "Contributed to the design, construction, and optimization of several websites, including those for e-commerce, agriculture, currency exchange, and human resources.",
+      two: "Proved mastery of HTML, CSS, JavaScript, React, Tailwind, TypeScript, and made sure that all browsers were compatible.",
+      three:
+        "Worked with cross-functional teams to transform design ideas into gorgeous, usable user interfaces with an emphasis on improving user experience.",
+      four: "Succinctly incorporated different APIs, including those from third parties, to improve website functionality and user engagement.",
+      five: "Demonstrated proficiency in HTML, CSS, JavaScript, React, Tailwind, TypeScript, and ensured cross-browser compatibility.",
+      six: "Enhanced user engagement through the inclusion of animations and interactive elements.",
+    },
+  },
+  {
+    id: 1,
+    period: "MARCH  2022 - DECEMBER 2022",
+    name: "Go2Uni - FrontEnd Website Developer",
+    tasks: {
+      one: "Planned and scheduled meetings, presentations and other work related activities.",
+      two: "Built the website and other core applications relating to Go2Uni.",
+      three: "Monitored and maintained the website.",
+      four: "Increasing user interest by using animations and interactive features.",
+    },
   },
   {
     id: 2,
     period: "FEBRUARY 2020 - FEBRUARY 2021",
     name: "Torilo Academy",
-    description:
-      "I completed comprehensive courses covering HTML, CSS, JavaScript, and React, equipping me with a strong foundation in web development and frontend technologies.",
+    tasks: {
+      one: "Adding new features and upgrades to hardware and software that is already in use",
+      two: "Addressing requests for technical help for both significant and minor bug fixes and other matters",
+      three:
+        "Assembling and delivering monthly operational and progress reports to the management team.",
+    },
   },
 ];
 
 export function JobTimeLine() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  // Set up the animation logic
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        x: 0,
+        opacity: 1,
+        transition: { duration: 2, ease: "easeInOut" },
+      });
+    } else {
+      controls.start({
+        x: 0,
+        opacity: 0,
+      });
+    }
+  }, [controls, inView]);
   return (
-    <Flex gap="clamp(10px,4vw,53px)" align="start" className="lg:flex-col">
+    <motion.div  ref={ref}
+    initial={{ x: 0, opacity: 0 }}
+    animate={controls} className="flex text-start gap-[clamp(10px,4vw,53px)] lg:flex-col">
       <TextTitle className="text-center " text="03" title="CAREER MILESTONES" />
       <Flex w="100%" direction="column" gap={40}>
         {EducationalHiatory?.map((item) => (
@@ -34,9 +77,12 @@ export function JobTimeLine() {
             align="start"
             className="lg:flex-col"
           >
-            <Text maw={300} className="font-extrabold">
+            <motion.div
+             
+              className="w-[300px] font-extrabold"
+            >
               {item?.period}
-            </Text>
+            </motion.div>
             <Box className="lg:hidden">
               <DividerIcon />
             </Box>
@@ -46,12 +92,16 @@ export function JobTimeLine() {
               direction="column"
               gap={10}
             >
-              <Text className="font-extrabold">{item.name}</Text>
-              <Text className="lg:max-w-max">{item?.description}</Text>
+              <Text className="font-extrabold">{item.name.toUpperCase()}</Text>
+              <ul className="list-disc">
+                {Object.values(item.tasks).map((task, index) => (
+                  <li key={index}>{task}</li>
+                ))}
+              </ul>
             </Flex>
           </Flex>
         ))}
       </Flex>
-    </Flex>
+    </motion.div>
   );
 }

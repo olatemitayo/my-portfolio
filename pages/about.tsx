@@ -30,10 +30,11 @@ const herodetails = [
 export default function Home() {
   return (
     <Layout>
-      <Flex direction="column" gap="clamp(40px,6vw,96px)">
         {/* navbar  */}
         <NavBar />
+      <Flex direction="column" gap="clamp(40px,6vw,96px)" maw={1440} m='auto'>
         {/* hero section  */}
+       
         <Flex
           w="100%"
           justify="space-between"
@@ -41,9 +42,9 @@ export default function Home() {
           className="lg:flex lg:flex-col lg:gap-4  "
         >
           <motion.div 
-            initial={{ x: -1000 }}
-            animate={{ x: 0 }}
-            transition={{ duration: 1 }}
+            initial={{ x: 0, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 2}}
            
             className="w-[48%] flex-col lg:w-full gap-[clamp(16px,2vw,32px)]"
           >
@@ -62,7 +63,7 @@ export default function Home() {
                   <Text className="font-bold">A FRONTEND WEB DEVELOPER</Text>
                 </Flex>
 
-                <Text>
+                <Text c='#121212'>
                 As a 25-year-old frontend web developer, I am dedicated to bringing creative visions to life through my expertise in HTML, CSS, and JavaScript. With a strong eye for design, I specialize in crafting user-friendly websites that seamlessly blend aesthetics with functionality. My commitment to staying at the forefront of web development trends ensures that I deliver modern and engaging digital experiences. I thrive in collaborative environments, leveraging my skills to contribute innovative solutions to diverse projects. Eager to tackle new challenges, I bring a dynamic and proactive approach to every aspect of frontend development.
                 </Text>
                 {/* <Flex direction="column" gap="clamp(12px,2vw,32px)">

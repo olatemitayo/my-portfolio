@@ -21,7 +21,7 @@ export default function index() {
     {
       id: 2,
       title: "Projects",
-      link: "/portfolio",
+      link: "/projects",
     },
     {
       id: 3,

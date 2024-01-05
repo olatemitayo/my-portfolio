@@ -1,5 +1,6 @@
 import { Flex, clsx, Text, Drawer, Group } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link'
 import router, { useRouter } from 'next/router'
@@ -16,12 +17,12 @@ export  function NavBar() {
         {
           id: 1,
           title: "About me",
-          link: "/",
+          link: "/about",
         },
         {
           id: 2,
-          title: "My portfolio",
-          link: "/portfolio",
+          title: "My Projects",
+          link: "/projects",
         },
         {
           id: 3,
@@ -32,7 +33,9 @@ export  function NavBar() {
     const router = useRouter();
     const [opened, { open, close }] = useDisclosure(false);
   return (
-    <Flex justify="space-between" align="center" w="100%">
+    <motion.div   initial={{ y: -500 }}
+    animate={{ y: 1 }}
+    transition={{ duration: 1 }} className='flex justify-between text-center w-full' >
     <Flex c="#55278F" className="font-bold text-[24px]">
       <Link href='/'>
       O.TAYO
@@ -104,6 +107,6 @@ export  function NavBar() {
         </Group>
       </div>
     </Flex>
-  </Flex>
+  </motion.div >
   )
 }
