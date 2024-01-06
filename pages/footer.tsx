@@ -8,7 +8,7 @@ interface INavLinks {
     title: string;
     link: string;
   }
-export  function Footer() {
+export default function Footer() {
     const NavLinks: INavLinks[] = [
         {
           id: 1,
