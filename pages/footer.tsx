@@ -20,11 +20,6 @@ export default function Footer() {
           title: "My Projects",
           link: "/projects",
         },
-        // {
-        //   id: 3,
-        //   title: "Contact me",
-        //   link: "/contact",
-        // },
       ];
   return (
     <div>
@@ -39,8 +34,7 @@ export default function Footer() {
                   {item?.title}
                 </Text>
               </Link>
-            ))}
-             
+            ))}           
         <ContactPopover />
         <Flex>
             hi

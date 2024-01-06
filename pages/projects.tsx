@@ -1,10 +1,8 @@
 import { Layout } from "@/layout";
 import { NavBar } from "@/nabvar";
 import { Box, Button, Flex, Title } from "@mantine/core";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaArrowAltCircleRight, FaArrowCircleRight } from "react-icons/fa";
 
 const MyProjects = [
   {
@@ -12,13 +10,13 @@ const MyProjects = [
     img: "/snackhouse.png",
     link: "https://snack-house.netlify.app/",
     title: "Snack House",
-    github: "#"
+    github: "https://github.com/olatemitayo/snack-house"
   },
   {
     id: "2",
     img: "/sdash.png",
     link: "https://olatunji-temitayo-s-dash.netlify.app/#",
-    github: '#'
+    github: 'https://github.com/olatemitayo/s-dashboard'
   },
 ];
 export default function Portfolio() {
@@ -33,9 +31,9 @@ export default function Portfolio() {
           </Title>
         </Flex>
       </Flex>
-      <Flex w="100%" gap={16} justify="space-between">
+      <Flex w="100%" gap={16} justify="space-between" className="scmd:flex-col scmd:gap-8">
         {MyProjects.map((item, index) => (
-          <Flex key={item?.id} direction="column" w="45%" gap={10}>
+          <Flex key={item?.id} direction="column" className="w-[45%] scmd:!w-full" gap={10}>
             <Flex key={item?.id} className="rounded-[20px]" h={320}>
               <img className="w-full" src={item?.img} alt={item?.img} />
             </Flex>
