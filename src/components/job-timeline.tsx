@@ -47,13 +47,14 @@ const EducationalHiatory = [
 export function JobTimeLine() {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  
   // Set up the animation logic
   useEffect(() => {
     if (inView) {
       controls.start({
         x: 0,
         opacity: 1,
-        transition: { duration: 2, ease: "easeInOut" },
+        transition: { duration: 1.75, ease: "easeInOut" },
       });
     } else {
       controls.start({

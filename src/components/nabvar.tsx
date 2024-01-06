@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link'
 import router, { useRouter } from 'next/router'
 import React from 'react'
+import { ContactPopover } from '.';
+import { FaInstagram } from 'react-icons/fa';
 
 interface INavLinks {
     id: number;
@@ -24,25 +26,26 @@ export  function NavBar() {
           title: "My Projects",
           link: "/projects",
         },
-        {
-          id: 3,
-          title: "Contact me",
-          link: "/contact",
-        },
+        // {
+        //   id: 3,
+        //   title: "Contact me",
+        //   link: "/contact",
+        // },
       ];
     const router = useRouter();
     const [opened, { open, close }] = useDisclosure(false);
   return (
     <motion.div   initial={{ y: -500 }}
     animate={{ y: 1 }}
-    transition={{ duration: 1 }} className='flex justify-between text-center w-full' >
-    <Flex c="#55278F" className="font-bold text-[24px]">
+    transition={{ duration: 0.7 }} className='flex justify-between items-center w-full' >
+    <Flex c="#55278F" className="font-bold text-[24px] ">
       <Link href='/'>
-      O.TAYO
+      OLATUNJI 
 
       </Link>
     </Flex>
     <Flex gap="clamp(16px,4vw,50px)">
+      <Flex align='center' gap={20}>
       {NavLinks?.map((item) => (
         <Link className="cmd:hidden" href={item?.link} key={item?.id}>
           <Text
@@ -57,6 +60,11 @@ export  function NavBar() {
           </Text>
         </Link>
       ))}
+     <div className='cmd:hidden'>
+        <ContactPopover />
+
+     </div>
+      </Flex>
       <div className="hidden cmd:block">
         <Drawer
           opened={opened}
@@ -91,6 +99,10 @@ export  function NavBar() {
                 </Text>
               </Link>
             ))}
+             
+        <ContactPopover />
+
+     
           </Flex>
         </Drawer>
 

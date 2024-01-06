@@ -1,4 +1,5 @@
-import AnimatedText from "@/animated-text";
+import { ContactPopover } from "@/contact-popover";
+import { AnimatedText } from "@/index";
 import { Layout } from "@/layout";
 import { Flex } from "@mantine/core";
 import { motion } from "framer-motion";
@@ -31,10 +32,10 @@ export default function index() {
   ];
   return (
     <Layout>
-      <Flex
+      <Flex 
         direction="column"
         gap={40}
-        className="mx-auto lg:w-[85%]  smd:w-full"
+        className="mx-auto lg:w-[85%]  smd:w-full "
         w="70%"
         h="80vh"
         justify="center"
@@ -52,7 +53,7 @@ export default function index() {
             el="h2"
             text={["My name is Olatunji Temitayo", "I'm a Software Developer"]}
             className="text-4xl scmd:text-2xl csm:text-xl sssm:text-lg"
-            repeatDelay={10000}
+            // repeatDelay={10000}
           />
 
           <motion.div className="flex flex-col gap-3"  initial={{ x: -1000 }}
@@ -60,10 +61,14 @@ export default function index() {
           transition={{ duration: 1.2 }}>
             {NavLinks.map((link) => (
               <Flex>
-                
-                <Link className='hover:text-[#55278F]' href={link.link} key={link.id}>- {link.title}</Link>
+              {link?.id === 3 ? <ContactPopover /> : 
+              
+                <Link className='hover:text-[#55278F] cursor-pointer' href={link.link} key={link.id}>- {link.title}</Link>
+              }
+               
               </Flex>
-            ))}
+            
+))}
           </motion.div>
         </Flex>
       </Flex>

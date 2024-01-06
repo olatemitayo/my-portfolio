@@ -33,7 +33,7 @@ export function EducationTimeLine() {
       controls.start({
         x: 0,
         opacity: 1,
-        transition: { duration: 2, ease: "easeInOut" },
+        transition: { duration: 1.75, ease: "easeInOut" },
       });
     } else {
       controls.start({

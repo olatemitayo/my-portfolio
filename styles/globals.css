@@ -4,13 +4,15 @@
 @import url("reset.css");
 
 * {
-    /* font-family: 'Poppins'; */
-    font-family: 'Kufam', sans-serif;
+    font-family: 'Poppins';
+    /* font-family: 'Kufam', sans-serif; */
     font-family: 'Poppins', sans-serif;
 }
+
 .no-scrollbar::-webkit-scrollbar {
     display: none !important;
 }
+
 .background-container{
   position: relative;
 }

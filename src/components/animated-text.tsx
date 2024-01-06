@@ -27,7 +27,7 @@ const defaultAnimations ={
     }
 }
 
-export default function AnimatedText({text, el: Wrapper ='p', className, once, repeatDelay, animation = defaultAnimations}: IAnimatedText) {
+export  function AnimatedText({text, el: Wrapper ='p', className, once, repeatDelay, animation = defaultAnimations}: IAnimatedText) {
 
     const controls = useAnimation();
   const textArray = Array.isArray(text) ? text : [text];
@@ -56,7 +56,6 @@ export default function AnimatedText({text, el: Wrapper ='p', className, once, r
   }, [isInView]);
   return (
     <Wrapper className={className}>
-        {/* <span className='sr-only'>{textArray.join(" ")}</span> */}
         <motion.span
         ref={ref}
         initial="hidden"
