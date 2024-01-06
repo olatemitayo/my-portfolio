@@ -76,7 +76,7 @@ export  function NavBar() {
               <Link href='/'>
             <Flex c="#55278F" className="font-bold text-[24px] ">
               
-              O.TAYO
+              OLATUNJI
             </Flex>
               </Link>
           }

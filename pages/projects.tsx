@@ -12,11 +12,13 @@ const MyProjects = [
     img: "/snackhouse.png",
     link: "https://snack-house.netlify.app/",
     title: "Snack House",
+    github: "#"
   },
   {
     id: "2",
     img: "/sdash.png",
     link: "https://olatunji-temitayo-s-dash.netlify.app/#",
+    github: '#'
   },
 ];
 export default function Portfolio() {
@@ -33,16 +35,16 @@ export default function Portfolio() {
       </Flex>
       <Flex w="100%" gap={16} justify="space-between">
         {MyProjects.map((item, index) => (
-          <Flex direction="column" w="45%" gap={10}>
+          <Flex key={item?.id} direction="column" w="45%" gap={10}>
             <Flex key={item?.id} className="rounded-[20px]" h={320}>
               <img className="w-full" src={item?.img} alt={item?.img} />
             </Flex>
             <Flex gap={8}>
             <Link href={item?.link}>
-              <Button>Visit Website</Button>
+              <Button className="hover:bg-[#3e1e64] bg-[#55278F] max-w-max text-sm">Visit Website</Button>
             </Link>
-            <Link href={""}>
-            <Button>View Code</Button>
+            <Link href={item?.github}>
+            <Button className="hover:bg-[#3e1e64] bg-[#55278F]  max-w-max text-sm">View Code</Button>
             </Link>
             </Flex>
           </Flex>
